@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { useCallback, useState } from 'react';
+import AnimateBall from './components/AnimateBall';
+import { Wrapper, Button, ButtonWrapper } from './style';
 
 function App() {
+  const [value, setValue] = useState(null);
+  const run = useCallback(() => {
+    const num = Math.floor(Math.random() * 10);
+    console.log(num);
+    setValue(num);
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Wrapper>
+      <AnimateBall value={value} />
+      <ButtonWrapper>
+        <Button onClick={run}>Run !</Button>
+      </ButtonWrapper>
+    </Wrapper>
   );
 }
 
