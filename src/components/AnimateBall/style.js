@@ -15,8 +15,8 @@ export const Wrapper = styled.div`
   overflow: hidden;
   position: relative;
   &,
-  & * {
-    transition: all 1s;
+  & > * {
+    transition: all 0s;
   }
 `;
 
@@ -24,14 +24,19 @@ export const BallsWrapperWithAnimation = styled.div`
   position: relative;
   &.play {
     animation-name: ${playFrames};
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-iteration-count: 3;
     animation-timing-function: linear;
+    animation-fill-mode: backwards;
   }
 `;
 
 export const BallsWrapper = styled.div`
   position: relative;
+  &.play {
+    transition: transform 5s;
+    transition-timing-function: ease-out;
+  }
 `;
 
 export const Ball = styled.div`
