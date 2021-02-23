@@ -10,20 +10,23 @@ const STOP = 0;
 const RUN = 1;
 const RUN_SLOW = 2;
 
-const AnimateBall = ({ value }) => {
+const AnimateBall = ({ value, timeStamp, stopOrder = 0 }) => {
   const [playState, setPlayState] = useState(STOP);
-  const [preValue, setPreValue] = useState(0);
+  const [preValue, setPreValue] = useState(value);
 
   useEffect(() => {
-    if (value !== null) {
+    if (timeStamp !== null) {
       setPlayState(RUN);
     }
-  }, [value]);
+  }, [timeStamp]);
 
   return (
     <Wrapper>
       <BallsWrapperWithAnimation
         className={playState === RUN ? 'play' : ''}
+        style={{
+          animationDelay: `${stopOrder * 0.5}s`,
+        }}
         onAnimationEnd={() => {
           setPlayState(RUN_SLOW);
           setPreValue(value + 10);

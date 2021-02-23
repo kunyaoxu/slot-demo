@@ -10,6 +10,13 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
+export const BallGroup = styled.div`
+  display: flex;
+  & > * {
+    margin: 0 8px;
+  }
+`;
+
 export const ButtonWrapper = styled.div`
   margin-top: 50px;
 `;
