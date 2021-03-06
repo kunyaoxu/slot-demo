@@ -38,13 +38,3 @@ export const BallsWrapper = styled.div`
     transition-timing-function: ease-out;
   }
 `;
-
-export const Ball = styled.div`
-  line-height: 50px;
-  text-align: center;
-  font-weight: bold;
-  width: 50px;
-  height: 50px;
-  background-color: #ccc;
-  color: white;
-`;

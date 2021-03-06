@@ -1,10 +1,6 @@
 import { useEffect, useState } from 'react';
-import {
-  BallsWrapper,
-  BallsWrapperWithAnimation,
-  Wrapper,
-  Ball,
-} from './style';
+import { Ball } from 'components/css';
+import { BallsWrapper, BallsWrapperWithAnimation, Wrapper } from './style';
 
 const STOP = 0;
 const RUN = 1;

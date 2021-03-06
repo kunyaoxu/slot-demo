@@ -12,9 +12,24 @@ export const Wrapper = styled.div`
 
 export const BallGroup = styled.div`
   display: flex;
+  flex-wrap: wrap;
   & > * {
-    margin: 0 8px;
+    /* margin: 0 8px; */
   }
+  /* tmp */
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+`;
+
+export const TmpBall = styled.div`
+  width: 50px;
+  height: 50px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  line-height: 50px;
+  background-color: #ccc;
 `;
 
 export const ButtonWrapper = styled.div`

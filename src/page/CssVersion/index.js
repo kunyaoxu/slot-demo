@@ -1,6 +1,7 @@
-import AnimateBall from 'components/AnimateBall';
-import { Wrapper, Button, ButtonWrapper, BallGroup } from './style';
 import { useCallback, useState } from 'react';
+import AnimateBall from 'components/AnimateBall';
+import { Button } from 'components/css';
+import { Wrapper, ButtonWrapper, BallGroup } from './style';
 
 const makeRandomValues = (min = 0, max = 0, count = 1) => {
   const arr = [];
