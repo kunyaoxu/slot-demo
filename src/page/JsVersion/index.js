@@ -13,10 +13,15 @@ const JsVersion = () => {
   useEffect(() => {
     let pos = 0;
     const runWork = (prevTime = performance.now()) => {
-      window.requestAnimationFrame(() => {
-        const now = performance.now();
+      window.requestAnimationFrame((now) => {
         const diffMs = now - prevTime;
         // if (!!ref && diffMs > 1000) {
+        //   pos = (pos + SPEED * diffMs) % MAX_POS;
+        //   ref.current.style.transform = `translateY(${-1 * pos}%)`;
+        //   return runWork(now);
+        // }
+        // runWork(prevTime);
+
         if (!!ref) {
           pos = (pos + SPEED * diffMs) % MAX_POS;
           ref.current.style.transform = `translateY(${-1 * pos}%)`;
