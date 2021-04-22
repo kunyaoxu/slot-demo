@@ -1,14 +1,15 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Ball, Button } from 'components/css';
 import { Wrapper, ButtonWrapper, BallGroup } from './style';
 
 const EVERY_STEP = 100 / 11;
 const MAX_POS = 100 - EVERY_STEP;
 /** 調節速度 */
-const SPEED = MAX_POS / 1000 / 3;
+const SPEED = MAX_POS / 1000 / 10;
 
 const JsVersion = () => {
   const ref = useRef();
+  const [val, setVal] = useState();
 
   useEffect(() => {
     let pos = 0;
@@ -25,6 +26,7 @@ const JsVersion = () => {
         if (!!ref) {
           pos = (pos + SPEED * diffMs) % MAX_POS;
           ref.current.style.transform = `translateY(${-1 * pos}%)`;
+          setVal(pos / EVERY_STEP);
         }
         runWork(now);
       });
@@ -36,6 +38,7 @@ const JsVersion = () => {
 
   return (
     <Wrapper>
+      <div style={{ color: 'white' }}>{val?.toFixed(2)}</div>
       <BallGroup>
         <div ref={ref}>
           <Ball>01</Ball>
